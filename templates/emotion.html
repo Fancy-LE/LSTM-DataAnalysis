@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header =======导航栏 -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/index"><span>六安旅游</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/index">首页 <i class="la la-angle-down"></i></a></li>
+          <li class="active"><a href="/emotion">情感预测</a></li>
+          <li><a href="/attraction">热门景点</a></li>
+          <li><a href="/time">时间趋势</a></li>
+          <li><a href="/ciyun">词云</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+    <section id="team" class="team">
+      <div class="container" >
+        <div class="section-title">
+          <h2>情感预测</h2>
+          <p>接收用户输入的一句话，利用之前建立的情感分析模型，分析这句话的情感倾向。</p>
+        </div>
+
+
+        <!-- ======= 情感分析 Section ======= -->
+        <section id="about" class="about"  data-aos="fade-up" data-aos-delay="100">
+          <div class="container">
+            <div class="emo">
+              <form class="input-area">
+                <p>请在下方输入需要分析的文本</p>
+    <!--            <input type="textarea" id="input-text" placeholder="请输入内容..." clearable :rows="2">-->
+                <textarea id="input-text" placeholder="请输入内容..." rows="6" style="resize:none" ></textarea>
+    <!--            <textarea id="input-text" placeholder="请输入内容..."></textarea>-->
+                <button class="submit-button" id="submit-btn">提交</button>
+    <!--            <button type="button" id="submit-btn">Predict Emotionbutton</button>-->
+              </form>
+
+              <div class="result-area">
+                <img id="result-image" src="static/assets/img/imageurl/欢迎.png" alt="Emotion Analysis Result Image">
+                <p id="result-text">返回分析结果，包括active和negative的情感倾向</p>
+              </div>
+            </div>
+          </div>
+        </section><!-- End 情感分析 Section -->
+
+      </div>
+    </section>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">Copyright &copy; 2024.Company name All rights reserved.</div>
+      <div class="credits"></div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+  <!--实现用户提交与返回结果的交互-->
+  <script>
+    $(document).ready(function() {
+
+      $('#submit-btn').click(function(e) {
+
+        e.preventDefault(); // 阻止表单默认提交行为
+        var text = $('#input-text').val(); // 获取文本输入
+
+        $.ajax({
+          url: '/predict',
+          type: 'POST',
+          data: { text: text },
+          success: function(data) {
+            // 假设服务器返回的是一个包含情感标签的JSON对象
+            // $('#result').empty();
+            console.log(data.result);
+            var imageSrc, imageAlt, text;
+            imageSrc = 'static/assets/img/imageurl/欢迎.png';
+            imageAlt = 'Default Emotion Image';
+
+            // // 清空之前的图片和结果
+            // $('#result-image').attr('src', '');
+            // $('#result-text').text('');
+
+            if (data.result === 'active') {
+              imageSrc = 'static/assets/img/imageurl/积极.png';
+              imageAlt = 'Positive Emotion Image';
+              text = '感谢您的认可，欢迎再来！';
+            }
+            if (data.result === 'negative') {
+              imageSrc = 'static/assets/img/imageurl/消极.png';
+              imageAlt = 'Negative Emotion Image';
+              text = '非常抱歉，我们会改进的。';
+            }
+             $('#result-image').attr('src', imageSrc);
+             $('#result-image').attr('alt', imageAlt);
+             $('#result-text').html('情感倾向为: ' + data.result + '.<br>' + text);},
+
+                      // $('#result').text('Emotion: ' + data.result);
+
+          error: function(error) {
+            console.log(error);
+            $('#result').text('error');
+
+          }
+          });
+            });
+        });
+
+
+
+
+  </script>
+
+</body>
+
+</html>
+
+

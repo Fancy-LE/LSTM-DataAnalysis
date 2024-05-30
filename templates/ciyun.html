@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header =======导航栏 -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/index"><span>六安旅游</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/index">首页 <i class="la la-angle-down"></i></a></li>
+          <li><a href="/emotion">情感预测</a></li>
+          <li><a href="/attraction">热门景点</a></li>
+          <li><a href="/time">时间趋势</a></li>
+          <li class="active"><a href="/ciyun">词云</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 video-box">
+            <img src="static/assets/img/wordcloud.jpg" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-6 d-flex flex-column justify-content-center about-content">
+
+            <div class="section-title">
+              <h2>关键词提取</h2>
+              <p>提取评论中的关键词，了解游客关注的重点，运用可视化工具制作词云树，让我们更清晰的了解人们对六安市景点的感受</p>
+            </div>
+
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-fingerprint"></i></div>
+              <h4 class="title"><a href="https://baike.baidu.com/item/%E5%85%AD%E5%AE%89%E5%B8%82/211125">关于六安</a></h4>
+              <p class="description">六（lù）安市，别称“皋城”、“皖西”，安徽省辖地级市，位于安徽省西部，大别山北麓，长江三角洲西翼，毗邻省会合肥市</p>
+            </div>
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="bx bx-gift"></i></div>
+              <h4 class="title"><a href="https://you.ctrip.com/sight/luan502.html">六安欢迎您！</a></h4>
+              <p class="description">八百里大别山 钟灵毓秀，纵揽江淮；六百里淠河水 源远流长，造福一方；千里大别山，醉美在六安</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+
+    <!-- ======= 部分评论展示 ======= -->
+    <section id="team" class="team" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>评论展示</h2>
+          <p>对数据采集部分所采集到的游客评价进行展示，随机展示二十条记录</p>
+        </div>
+
+        <section id="portfolio" class="portfolio section-bg">
+            <div class="container table-responsive">
+                <table class="table text-nowrap">
+                    <tr class="text-center">
+                        <td><b>景点名称</b></td>
+                        <td><b>评论内容</b></td>
+                    </tr>
+
+                    {% for comment in comments %}
+                        <tr class="text-center">
+                            <td>{{comment[0]}}</td>
+                            <td>{{comment[1]}}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+            </div>
+        </section>
+
+
+      </div>
+    </section><!-- end 部分评论展示 -->
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">Copyright &copy; 2024.Company name All rights reserved.</div>
+      <div class="credits"></div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

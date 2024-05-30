@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script src="static/assets/js/echarts.min.js"></script>
+
+  <title>Home</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header =======导航栏 -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/index"><span>六安旅游</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/index">首页 <i class="la la-angle-down"></i></a></li>
+          <li><a href="/emotion">情感预测</a></li>
+          <li class="active"><a href="/attraction">热门景点</a></li>
+          <li><a href="/time">时间趋势</a></li>
+          <li><a href="/ciyun">词云</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+    <!--图表-->
+    <section id="team" class="team">
+      <div class="container" >
+        <div class="section-title">
+          <h2>热门景点分析</h2>
+          <p>统计评论数量最多的景点，通过游客评论数了解景点的热门程度</p>
+        </div>
+
+      <!-- ======= 柱状图 ======= -->
+      <section class="counts section-bg">
+        <div class="container"  data-aos="fade-up" data-aos-delay="100">
+            <div id="main" style="width: 100%;height: 350px;">
+            </div>
+        </div>
+      </section><!-- End 柱状图 -->
+
+      <!-- ======= Frequently Asked Questions Section ======= -->
+      <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="row  d-flex align-items-stretch">
+          <div class="col-lg-12 faq-item">
+            <p>
+              这是一个横坐标为景点、纵坐标为评论数的柱状图，并且按评论数的个数从大到小排列。我们可以清晰的从这张柱状图可以清晰地看出六安市各个景点的游客评价数量。柱子的高度直观地反映了每个景点的热度或受欢迎程度。
+            </p>
+          </div>
+
+          <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100">
+            <h4>最热门景点</h4>
+            <p>
+              根据图表，天堂寨的游客数量最多，超过了2900人，成为六安市最热门的景点。
+            </p>
+          </div>
+          <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="200">
+            <h4>相对冷门景点</h4>
+            <p>
+              有一些景点的游客数量相对较少，这些景点可能需要加强宣传、改善设施或提供更具吸引力的旅游项目，以提高其知名度和吸引力。
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+      </div>
+    </section>
+
+
+
+
+      <!-- ======= 景点TOP4 ======= -->
+    <section class="team">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>热门景点TOP4</h2>
+          <p>根据爬取的信息，评价人数，评分，热度，得到六安市最热门的四个景点。</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up">
+            <div class="member">
+              <div class="pic"><img src="static/assets/img/team/天堂寨.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>天堂寨</h4>
+                <span>金寨县天堂寨风景名胜区</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <div class="pic"><img src="static/assets/img/team/万佛湖风景区.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>万佛湖风景区</h4>
+                <span>舒城县万佛湖风景区</span>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <div class="pic"><img src="static/assets/img/team/霍山大峡谷漂流.png" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>霍山大峡谷漂流</h4>
+                <span>霍山县落儿岭镇白云庵村鹿吐石铺</span>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <div class="pic"><img src="static/assets/img/team/皖西大裂谷.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>皖西大裂谷</h4>
+                <span>金安区张店镇太平桥村</span>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End 景点TOP4 -->
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">Copyright &copy; 2024.Company name All rights reserved.</div>
+      <div class="credits"></div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+  <!--  柱状图  -->
+  <script type="text/javascript">
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    $.ajax({
+        url:'/get_data',
+        type:'GET',
+        dataType:'json',
+        success: function (data){
+            var xAxisData = data.name;
+            var seriesData = data.num;
+
+            option = {
+            color : ['#3398DB'],
+            title :{
+                text : ''
+            },
+            tooltip : {
+              trigger : 'axis',
+              axisPointer : {
+                  type : 'shadow',
+              }
+            },
+            grid : {
+                left : '3%',
+                right : '4%',
+                bottom : '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type : 'category',
+                data: xAxisData,
+                axisLabel: { interval: 0, rotate: 30 }
+            },
+            yAxis: {
+            type: 'value'
+            },
+            series: [
+            {
+              data : seriesData,
+              type: 'bar',
+              barWidth : '60%'
+            }
+            ]
+            };
+        option && myChart.setOption(option);
+        },
+        error: function (error){
+            console.error('Error fetching data:',error);
+        }
+    });
+
+
+
+
+  </script>
+
+
+</body>
+
+</html>

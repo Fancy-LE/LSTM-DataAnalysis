@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <script src="static/assets/js/echarts.min.js"></script>
+
+  <title>Home</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header =======导航栏 -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="/index"><span>六安旅游</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li><a href="/index">首页 <i class="la la-angle-down"></i></a></li>
+          <li><a href="/emotion">情感预测</a></li>
+          <li><a href="/attraction">热门景点</a></li>
+          <li class="active"><a href="/time">时间趋势</a></li>
+          <li><a href="/ciyun">词云</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+      <!-- ======= 时间趋势展示 ======= -->
+    <section id="team" class="team">
+      <div class="container" >
+        <div class="section-title">
+          <h2>时间趋势分析</h2>
+          <p>展示评论数量随月份的变化，了解旅游流行季节，帮助识别旅游高峰期</p>
+        </div>
+
+        <!--图表-->
+        <section class="counts section-bg">
+          <div class="container"  data-aos="fade-up" data-aos-delay="100">
+            <div id="main" style="width: 100%;height: 350px;">
+            </div>
+          </div>
+        </section>
+
+        <!-- ======= 文字 Section ======= -->
+        <section id="faq" class="faq section-bg" >
+          <div class="container">
+            <div class="row  d-flex align-items-stretch">
+              <div class="col-lg-12 faq-item">
+                <p>
+                  这是一个横坐标为月份、纵坐标为评论数的折线图，游客评论条数在一年中各个月份有所波动。这张图表显示了一年中各个月份的游客评论条数变化趋势，从中可以分析出旅游的热门季节和淡季。
+                </p>
+              </div>
+
+              <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="100">
+                <h4>热门季节</h4>
+                <p>
+                  评论条数在8月和10月达到了一年中的高峰，这表明这两个月是这一年中最热门的旅游月份，吸引了大量的游客前来参观并留下评论。
+                </p>
+              </div>
+              <div class="col-lg-6 faq-item" data-aos="fade-up" data-aos-delay="200">
+                <h4>旅游淡季</h4>
+                <p>
+                  我们可以发现在冬季旅游人数明显降低。可能是因为天气寒冷的原因，人们减少了旅游活动。
+                </p>
+              </div>
+
+        </div>
+          </div>
+        </section><!-- End 文字 Section -->
+
+
+      </div>
+    </section><!-- end 时间趋势展示 -->
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">Copyright &copy; 2024.Company name All rights reserved.</div>
+      <div class="credits"></div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="static/assets/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+  <!--折线图-->
+  <script type="text/javascript">
+
+    var chartDom = document.getElementById('main');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    $.ajax({
+        url:'/get_month',
+        type:'GET',
+        dataType:'json',
+        success: function (data){
+            var seriesData = data.num;
+
+            option = {
+                color : ['#3398DB'],
+                title :{
+                    text : ''
+                },
+                tooltip : {
+                  trigger : 'axis',
+                  axisPointer : {
+                      type : 'shadow',
+                  }
+                },
+                grid : {
+                    left : '3%',
+                    right : '4%',
+                    bottom : '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                      data: seriesData,
+                      type: 'line',
+                      smooth: true
+                    }
+                ]
+            };
+            option && myChart.setOption(option);
+        },
+        error: function (error){
+            console.error('Error fetching data:',error);
+        }
+    });
+
+  </script>
+
+</body>
+
+</html>
